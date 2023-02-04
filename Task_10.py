@@ -6,18 +6,19 @@
 5 -> 1 0 1 1 0
 2
 """
+import random
 N = int(input('Введите общее число монеток: '))
-text = int(input('Введите последовательность сторон: '))
 count1 = 0
 count2 = 0
-i = 0
-for i in N:
-    if int(text[i]) == int(text[i + 1]):
-        count1 += 1
+for i in range(N):
+    coin = random.randrange(0,2)
+    print(coin, end = ' ')
+    if coin == 0:
+        count1 = count1 + 1
     else:
-        count2 += 1
-    i = i + 1
+        count2 = count2 + 1
+print()
 if count1 < count2:
-    print(f'нужно перевернуть минимум {count1} монет')
+    print(f'нужно перевернуть минимум {count1} шт')
 else:
-    print(f'нужно перевернуть минимум {count2} монет')
+    print(f'нужно перевернуть минимум {count2} шт')
