@@ -9,14 +9,14 @@
 
 S = int(input('Введите сумму натуральных чисел: '))
 P = int(input('Введите произведение натуральных чисел: '))
-x = 0
-y = 0
-while x <= 1000:
-    while y <=1000:
+
+for x in range(1001):
+    for y in range(1001):
         if S == x + y and P == x * y:
             print(f'искомые числа {x} и {y}')
-        y += 1
-    x += 1
+            break
+    else:
+        continue
+    break
 else:
-    print('вычисление невозможно')
-
+    print('вычисление натуральных чисел невозможно')
