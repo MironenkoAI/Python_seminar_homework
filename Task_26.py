@@ -3,13 +3,32 @@
 A = 3; B = 5 -> 243 (3⁵)
 A = 2; B = 3 -> 8 """
 
-def degree(n):
-    i = int(input("Введите степень: "))
+""" РЕШЕНИЕ 1: с помощью рекурсии """
+def degree(n, i):
     if n == 0:
         if i == 0:
             return 'не имеет смысла'
         return 0
     if i == 0:
         return 1
-    return n**i
-print(degree(int(input("Введите число: "))))
+    if i == 1:
+        return n
+    if i != 1:
+        return n * degree(n, i - 1)
+
+n = int(input("Введите число: "))
+i = int(input("Введите степень: "))
+print("Результат возведения в степень равен: ", degree(n, i))
+
+
+""" РЕШЕНИЕ 2: с помощью функции """
+# def degree(n):
+#     i = int(input("Введите степень: "))
+#     if n == 0:
+#         if i == 0:
+#             return 'не имеет смысла'
+#         return 0
+#     if i == 0:
+#         return 1
+#     return n**i
+# print(degree(int(input("Введите число: "))))
